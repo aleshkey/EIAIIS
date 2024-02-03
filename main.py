@@ -5,7 +5,6 @@ from src.orph.Checker import Checker
 from nltk.tokenize import word_tokenize
 import nltk
 
-nltk.download('popular')
 
 
 def print_p(text):
@@ -17,8 +16,16 @@ if __name__ == '__main__':
     text = FileReader.read_pdf_files("D:\\Download\\testPDF.pdf")
     checker = Checker()
     text = text.replace("\n", " ")
+    text = text.replace(" - ", " ")
+    text = text.replace(" -", "-")
+    text = text.replace(".", "")
+    text = text.replace("?", "")
+    text = text.replace(",", "")
+    text = text.replace("!", "")
     text = re.sub(r"\s+", " ", text)
-    text = text.strip()
-    words = word_tokenize(text)
-    print_p(words)
-    checker.countWords(words)
+    words = text.split(" ")
+    words = checker.countWords(words)
+    for word in words:
+        print(word)
+        print(word.forms)
+        print()
