@@ -1,0 +1,47 @@
+<div class="table-container">
+  <div class="header-container">
+    <table mat-table *ngIf="words" [dataSource]="words" class="mat-elevation-z8 custom-table">
+      <!-- Word Column -->
+      <ng-container matColumnDef="word">
+        <th mat-header-cell *matHeaderCellDef>Word</th>
+        <td mat-cell *matCellDef="let word">{{ word.normal_form }}</td>
+      </ng-container>
+
+      <!-- Number Column -->
+      <ng-container matColumnDef="number">
+        <th mat-header-cell *matHeaderCellDef>Number</th>
+        <td mat-cell *matCellDef="let word">{{ word.number }}</td>
+      </ng-container>
+
+      <!-- Отображение столбцов таблицы -->
+      <tr mat-header-row *matHeaderRowDef="['word', 'number']"></tr>
+    </table>
+  </div>
+
+  <div class="content-container">
+    <table mat-table *ngIf="words" [dataSource]="words" class="mat-elevation-z8 custom-table">
+      <!-- Word Column -->
+      <ng-container matColumnDef="word">
+        <th mat-header-cell *matHeaderCellDef>Word</th>
+        <td mat-cell *matCellDef="let word">{{ word.normal_form }}</td>
+      </ng-container>
+
+      <!-- Number Column -->
+      <ng-container matColumnDef="number">
+        <th mat-header-cell *matHeaderCellDef>Number</th>
+        <td mat-cell *matCellDef="let word">{{ word.number }}</td>
+      </ng-container>
+
+      <!-- Отображение столбцов таблицы -->
+      <tr mat-row *matRowDef="let word; columns: ['word', 'number'];"
+          [routerLink]="'/words/' + word.id"
+          class="highlight-row"></tr>
+    </table>
+  </div>
+</div>
+<hr/>
+<div class="controls">
+  <search style="margin-right: 50px"></search>
+    <button mat-flat-button style="width: 40%; margin-right: 10%" color="primary" (click)="router.navigate(['path'])">Change path</button>
+</div>
+

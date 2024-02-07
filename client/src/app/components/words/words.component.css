@@ -1,0 +1,46 @@
+.table-container {
+  height: 85vh;
+  overflow: auto;
+}
+
+.header-container {
+  position: sticky;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.23);
+  z-index: 1;
+}
+
+.content-container {
+  overflow-y: auto;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Добавляем этот стиль */
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 8px;
+  text-align: left;
+  white-space: nowrap; /* Добавляем этот стиль */
+  overflow: hidden; /* Добавляем этот стиль */
+  text-overflow: ellipsis; /* Добавляем этот стиль */
+}
+
+.custom-table th {
+  background-color: #f5f5f5;
+}
+
+.custom-table tr.highlight-row:hover {
+  background-color: #e0e0e0;
+}
+
+
+.controls{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+}

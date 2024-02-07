@@ -1,0 +1,55 @@
+<div class="word-details">
+  <h3><strong>Word Details</strong></h3>
+  <hr/>
+  <p><strong>Normal Form:</strong> {{ word.normal_form }}</p>
+  <p><strong>Number:</strong> {{ word.number }}</p>
+  <h4><strong>Forms:</strong></h4>
+  <ul class="forms-list">
+    <li *ngFor="let form of word.forms" class="form-item">
+      <div class="form-row">
+        <span class="form-label" *ngIf="form.word"><strong>Word:</strong></span>
+        <span class="form-value" *ngIf="form.word">{{ form.word }}</span>
+      </div>
+      <div class="form-row">
+        <span class="form-label" *ngIf="form.number"><strong>Number:</strong></span>
+        <span class="form-value" *ngIf="form.number">{{ form.number }}</span>
+      </div>
+      <div class="form-row">
+        <span class="form-label" *ngIf="form.part_of_speech"><strong>Part of Speech:</strong></span>
+        <span class="form-value" *ngIf="form.part_of_speech">{{ form.part_of_speech }}</span>
+      </div>
+      <div class="form-row">
+        <span class="form-label" *ngIf="form.gender"><strong>Gender:</strong></span>
+        <span class="form-value" *ngIf="form.gender">{{ form.gender }}</span>
+      </div>
+      <div class="form-row">
+        <span class="form-label" *ngIf="form.case"><strong>Case:</strong></span>
+        <span class="form-value" *ngIf="form.case">{{ form.case }}</span>
+      </div>
+      <div class="form-row">
+        <span class="form-label" *ngIf="form.time"><strong>Time:</strong></span>
+        <span class="form-value" *ngIf="form.time">{{ form.time }}</span>
+      </div>
+
+      <div class="form-row">
+        <span class="form-label" *ngIf="form.type"><strong>Type:</strong></span>
+        <span class="form-value" *ngIf="form.type">{{ form.type }}</span>
+      </div>
+
+      <div class="form-row">
+        <span class="form-label" *ngIf="form.inclination"><strong>Inclination:</strong></span>
+        <span class="form-value" *ngIf="form.inclination">{{ form.inclination }}</span>
+      </div>
+
+      <hr class="form-divider" *ngIf="form !== word.forms[word.forms.length - 1]">
+    </li>
+  </ul>
+</div>
+<div id="controls" class = "row">
+  <button style="width: 40%; margin-right: 10%" (click)="router.navigate(['words'])" mat-flat-button color="primary">
+    See words
+  </button>
+  <button style="width: 40%; margin-right: 10%" (click)="router.navigate(['path'])" mat-flat-button color="primary">
+    Change path
+  </button>
+</div>

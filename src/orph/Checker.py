@@ -5,16 +5,21 @@ from src.util.Proxy import Word
 
 class Checker:
     morph = pymorphy2.MorphAnalyzer()
-    words_num = {}
     words = []
 
-    def countWords(self, a_list):
+    def __init__(self):
+        self.words = []
+
+    def count_words(self, a_list):
+        id = 1
         for i in range(len(a_list)):
             word = Word()
             item = self.morph.parse(a_list[i])[0]
             matching_words = [word for word in self.words if word.normal_form == item.normal_form]
             if len(matching_words) == 0:
                 word.normal_form = item.normal_form
+                word.id = id
+                id += 1
                 self.words.append(word)
             matching_words = [word for word in self.words if word.normal_form == item.normal_form]
             for word in matching_words:

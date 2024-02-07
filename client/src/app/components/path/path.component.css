@@ -1,0 +1,23 @@
+.path-page{
+  text-align: center;
+  margin-top: 10rem;
+}
+
+.container{
+  justify-content: center;
+}
+
+#controls{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 40%;
+}
+
+
+mat-form-field{
+  justify-content: center;
+  width: 100%;
+  margin-top: 20%;
+}
+

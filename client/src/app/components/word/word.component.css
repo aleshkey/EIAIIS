@@ -1,0 +1,53 @@
+.word-details {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.word-details h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.word-details p {
+  margin-bottom: 5px;
+}
+
+.forms-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form-item {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.form-row {
+  margin-left: 30px;
+  margin-bottom: 5px;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-value {
+  margin-left: 5px;
+}
+
+.form-divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+#controls{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 40%;
+}
+
