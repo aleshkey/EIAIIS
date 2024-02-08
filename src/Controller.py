@@ -17,6 +17,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 @cross_origin()
 def get_all_words():
     global all_words, path
+    print(path)
     all_words = []
     text = FileReader.read_pdf_files(path)
     checker = Checker()
@@ -47,7 +48,9 @@ def set_path():
     global all_words, path
     all_words = []
     json_data = request.get_json()
+    print(json_data.get('path'))
     path = json_data.get('path')
+    return {"status": "ok"}
 
 
 @app.route('/search', methods=['GET'])
@@ -60,8 +63,6 @@ def search():
     for word in all_words:
         if query.lower() in word.normal_form.lower():
             json.append({'id': word.id, 'normal_form': word.normal_form, 'number': word.number})
-
-    print(json)
     return jsonify(json)
 
 

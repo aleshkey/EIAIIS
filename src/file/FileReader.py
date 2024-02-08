@@ -19,5 +19,11 @@ class FileReader:
         text = text.replace("?", "")
         text = text.replace(",", "")
         text = text.replace("!", "")
+        text = text.replace("'", "")
+        text = text.replace('"', "")
+        text = text.replace('<', "")
+        text = text.replace('>', "")
+        text = text.replace('+', "")
+
         text = re.sub(r"\s+", " ", text)
         return text

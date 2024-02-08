@@ -12,7 +12,7 @@ export class PathService {
   constructor(private http: HttpClient) { }
 
   setPath(path: any){
-    return this.http.post(Constants.PATH_API,{
+    return this.http.post(Constants.PATH_API, {
       "path": path
     });
   }

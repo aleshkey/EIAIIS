@@ -31,7 +31,11 @@ export class PathComponent implements OnInit{
   }
 
   submit() {
-    this.pathService.setPath(this.pathForm.value.path)
-    //this.router.navigate(['words'])
+    console.log(this.pathForm.value.path)
+    this.pathService.setPath(this.pathForm.value.path).subscribe(data => {
+      console.log(data)
+      this.router.navigate(['words'])
+      }
+    )
   }
 }
