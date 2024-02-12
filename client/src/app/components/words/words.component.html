@@ -33,15 +33,17 @@
       </ng-container>
 
       <!-- Отображение столбцов таблицы -->
-      <tr mat-row *matRowDef="let word; columns: ['word', 'number'];"
+      <tr matTooltip="Press to get more info"
+mat-row *matRowDef="let word; columns: ['word', 'number'];"
           [routerLink]="'/words/' + word.id"
           class="highlight-row"></tr>
     </table>
   </div>
+  <button mat-raised-button class="report-button" color="primary" (click)="openReportDialog()">Report</button>
 </div>
 <hr/>
 <div class="controls">
   <search style="margin-right: 50px"></search>
-    <button mat-flat-button style="width: 40%; margin-right: 10%" color="primary" (click)="router.navigate(['path'])">Change path</button>
+  <path style="width: 50%;"></path>
 </div>
 

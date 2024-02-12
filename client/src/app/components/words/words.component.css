@@ -42,5 +42,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3%;
+  margin-top: 1%;
+}
+
+.report-button{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }

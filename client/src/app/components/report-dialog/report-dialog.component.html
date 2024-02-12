@@ -1,0 +1,22 @@
+<div class="container">
+<div>
+  <form>
+    <div class="justify-content-center">
+
+
+      <div id="controls" class = "row">
+        <div class="file-input-container">
+          <input matTooltip="Press button to upload file"
+ type="file" class="file-input" (change)="onFileSelected($event.target)">
+        </div>
+
+      </div>
+
+    </div>
+
+  </form>
+</div>
+
+  <button mat-button (click)="closeDialog()">OK</button>
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+</div>

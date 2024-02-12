@@ -21,6 +21,10 @@ import {
 import { WordComponent } from './components/word/word.component';
 import { SearchComponent } from './components/search/search.component';
 import {MatAutocomplete, MatAutocompleteTrigger, MatOption} from "@angular/material/autocomplete";
+import {MatTooltip} from "@angular/material/tooltip";
+import {MatSelect} from "@angular/material/select";
+import {MatCheckbox} from "@angular/material/checkbox";
+import { ReportDialogComponent } from './components/report-dialog/report-dialog.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,8 @@ import {MatAutocomplete, MatAutocompleteTrigger, MatOption} from "@angular/mater
     PathComponent,
     WordsComponent,
     WordComponent,
-    SearchComponent
+    SearchComponent,
+    ReportDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,10 @@ import {MatAutocomplete, MatAutocompleteTrigger, MatOption} from "@angular/mater
     FormsModule,
     MatAutocomplete,
     MatOption,
-    MatAutocompleteTrigger
+    MatAutocompleteTrigger,
+    MatTooltip,
+    MatSelect,
+    MatCheckbox
   ],
   providers: [
     provideClientHydration(),

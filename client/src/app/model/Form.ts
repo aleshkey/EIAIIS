@@ -7,4 +7,5 @@ export interface Form{
   time: string;
   type: string;
   inclination: string;
+  animation: string;
 }

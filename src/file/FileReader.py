@@ -12,6 +12,10 @@ class FileReader:
             for page in pdf_reader.pages:
                 t = page.extract_text()
                 text = text + t
+        return FileReader.convert(text)
+
+    @staticmethod
+    def convert(text):
         text = text.replace("\n", " ")
         text = text.replace(" - ", " ")
         text = text.replace(" -", "-")
@@ -27,3 +31,13 @@ class FileReader:
 
         text = re.sub(r"\s+", " ", text)
         return text
+
+    @staticmethod
+    def process_pdf_file(file_object):
+        pdf_reader = PyPDF2.PdfReader(file_object)
+        text = ''
+        for page in pdf_reader.pages:
+            t = page.extract_text()
+            text += t
+
+        return FileReader.convert(text)

@@ -3,53 +3,112 @@
   <hr/>
   <p><strong>Normal Form:</strong> {{ word.normal_form }}</p>
   <p><strong>Number:</strong> {{ word.number }}</p>
+
   <h4><strong>Forms:</strong></h4>
   <ul class="forms-list">
-    <li *ngFor="let form of word.forms" class="form-item">
+
+
+    <li *ngFor="let form of word?.forms" class="form-item">
       <div class="form-row">
         <span class="form-label" *ngIf="form.word"><strong>Word:</strong></span>
         <span class="form-value" *ngIf="form.word">{{ form.word }}</span>
       </div>
       <div class="form-row">
-        <span class="form-label" *ngIf="form.number"><strong>Number:</strong></span>
-        <span class="form-value" *ngIf="form.number">{{ form.number }}</span>
+        <p>
+        <strong> Number: </strong>
+        </p>
+        <mat-form-field class="select">
+          <mat-select [disabled]="!disableSelect.value" [(ngModel)]=form.number panelClass="vertical-select">
+            <mat-option *ngFor="let state of states['NUMBER']" [value]="state">{{state}}</mat-option>
+          </mat-select>
+      </mat-form-field>
       </div>
       <div class="form-row">
-        <span class="form-label" *ngIf="form.part_of_speech"><strong>Part of Speech:</strong></span>
-        <span class="form-value" *ngIf="form.part_of_speech">{{ form.part_of_speech }}</span>
+        <p>
+        <strong> Part of speech: </strong>
+        </p>
+        <mat-form-field class="select">
+          <mat-select [disabled]="!disableSelect.value" [(ngModel)]=form.part_of_speech panelClass="vertical-select">
+            <mat-option *ngFor="let state of states['POS']" [value]="state">{{state}}</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
       <div class="form-row">
-        <span class="form-label" *ngIf="form.gender"><strong>Gender:</strong></span>
-        <span class="form-value" *ngIf="form.gender">{{ form.gender }}</span>
+        <p>
+        <strong> Gender: </strong>
+        </p>
+        <mat-form-field class="select">
+          <mat-select [disabled]="!disableSelect.value" [(ngModel)]=form.gender panelClass="vertical-select">
+            <mat-option *ngFor="let state of states['GENDER']" [value]="state">{{state}}</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
       <div class="form-row">
-        <span class="form-label" *ngIf="form.case"><strong>Case:</strong></span>
-        <span class="form-value" *ngIf="form.case">{{ form.case }}</span>
+        <p>
+        <strong> Time: </strong>
+        </p>
+        <mat-form-field class="select">
+          <mat-select [disabled]="!disableSelect.value" [(ngModel)]=form.time panelClass="vertical-select">
+            <mat-option *ngFor="let state of states['TIME']" [value]="state">{{state}}</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
       <div class="form-row">
-        <span class="form-label" *ngIf="form.time"><strong>Time:</strong></span>
-        <span class="form-value" *ngIf="form.time">{{ form.time }}</span>
+        <p>
+        <strong> Type: </strong>
+        </p>
+        <mat-form-field class="select">
+          <mat-select [disabled]="!disableSelect.value" [(ngModel)]=form.type panelClass="vertical-select">
+            <mat-option *ngFor="let state of states['TYPE']" [value]="state">{{state}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <p>
+        <strong> Inclination: </strong>
+        </p>
+        <mat-form-field class="select">
+          <mat-select [disabled]="!disableSelect.value" [(ngModel)]=form.inclination panelClass="vertical-select">
+            <mat-option *ngFor="let state of states['INCLINATION']" [value]="state">{{state}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <p>
+        <strong> Case: </strong>
+        </p>
+        <mat-form-field class="select">
+          <mat-select [disabled]="!disableSelect.value" [(ngModel)]=form.case panelClass="vertical-select">
+            <mat-option *ngFor="let state of states['CASE']" [value]="state">{{state}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <p>
+        <strong> Animation: </strong>
+        </p>
+        <mat-form-field class="select">
+          <mat-select [disabled]="!disableSelect.value" [(ngModel)]=form.animation panelClass="vertical-select">
+            <mat-option *ngFor="let state of states['ANIMATION']" [value]="state">{{state}}</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
 
-      <div class="form-row">
-        <span class="form-label" *ngIf="form.type"><strong>Type:</strong></span>
-        <span class="form-value" *ngIf="form.type">{{ form.type }}</span>
-      </div>
 
-      <div class="form-row">
-        <span class="form-label" *ngIf="form.inclination"><strong>Inclination:</strong></span>
-        <span class="form-value" *ngIf="form.inclination">{{ form.inclination }}</span>
-      </div>
+
+
 
       <hr class="form-divider" *ngIf="form !== word.forms[word.forms.length - 1]">
     </li>
   </ul>
 </div>
 <div id="controls" class = "row">
-  <button style="width: 40%; margin-right: 10%" (click)="router.navigate(['words'])" mat-flat-button color="primary">
+  <button matTooltip="Return to words catalog and save changes" class="fixed-button"
+   style="width: 40%; margin-right: 10%" (click)="router.navigate(['words']); sendData()" mat-flat-button color="primary">
+
     See words
   </button>
-  <button style="width: 40%; margin-right: 10%" (click)="router.navigate(['path'])" mat-flat-button color="primary">
-    Change path
-  </button>
+  <p>
+        <mat-checkbox matTooltip="Click to edit forms" [formControl]="disableSelect" class="fixed-checkbox"> Change info about forms </mat-checkbox>
+  </p>
 </div>

@@ -6,9 +6,8 @@ from src.Constants import Constants
 class FormMapper:
 
     @staticmethod
-    def convert(item):
-        chars = re.split(r'\s|,', str(item.tag))
-        res = {'word': item.word}
+    def convert(chars):
+        res = {'word': chars[2]}
         for characteristic in chars:
             if characteristic in Constants.part_of_speech_map:
                 res['part_of_speech'] = Constants.part_of_speech_map[characteristic]
@@ -22,12 +21,11 @@ class FormMapper:
                 res['animation'] = Constants.animation[characteristic]
             if characteristic in Constants.degree:
                 res['degree'] = Constants.degree[characteristic]
-            if characteristic in Constants.mest:
-                res['form'] = Constants.mest[characteristic]
             if characteristic in Constants.time:
                 res['time'] = Constants.time[characteristic]
+            if characteristic in Constants.type:
+                res['type'] = Constants.type[characteristic]
             if characteristic in Constants.inclination:
                 res['inclination'] = Constants.inclination[characteristic]
-
         print(res)
         return res

@@ -51,3 +51,18 @@
   width: 40%;
 }
 
+.fixed-button {
+  position: fixed;
+  bottom: 20px; /* Расстояние от нижней границы экрана */
+  left: 30%; /* Расстояние от левой границы экрана */
+}
+
+.fixed-checkbox {
+  position: fixed;
+  bottom: 20px; /* Расстояние от нижней границы экрана */
+  right: 20px; /* Расстояние от правой границы экрана */
+}
+
+.select{
+  width: 20%;
+}

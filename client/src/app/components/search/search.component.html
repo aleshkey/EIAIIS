@@ -1,5 +1,6 @@
 <mat-form-field appearance="outline">
-    <input type="text" matInput placeholder="Search" [(ngModel)]="inputValue" (input)="search()" [matAutocomplete]="auto">
+    <input matTooltip="Use this field to search smth"
+type="text" matInput placeholder="Search" [(ngModel)]="inputValue" (input)="search()" [matAutocomplete]="auto">
   <mat-icon matSuffix>search</mat-icon>
   <mat-autocomplete #auto="matAutocomplete">
     <mat-option *ngFor="let option of autocompleteOptions" [value]="option" [routerLink]="'/words/' + option.id">{{ option.normal_form }}</mat-option>

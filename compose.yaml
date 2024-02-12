@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  postgres:
+    image: 'postgres:latest'
+    container_name: 'exhibition_lab2'
+    ports:
+      - 5435:5432
+    environment:
+      - 'POSTGRES_USER=aleshkey'
+      - 'POSTGRES_PASSWORD=lEsha6012004'
+      - 'POSTGRES_HOST_AUTH_METHOD=trust'
+      - 'POSTGRES_DB=exhibition_db'
