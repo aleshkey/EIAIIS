@@ -50,3 +50,12 @@
   bottom: 20px;
   right: 20px;
 }
+
+.quote__text-letter {
+  float: right; /* Обтекание символа текстом справа */
+  margin-right: 7px; /* Отступ справа */
+  color: #0008ff; /* Цвет символа */
+  font-family: "Roboto Slab", serif; /* Шрифт с засечками */
+  font-size: 20px; /* Размер шрифта */
+  line-height: 20px; /* Высота строки */
+}

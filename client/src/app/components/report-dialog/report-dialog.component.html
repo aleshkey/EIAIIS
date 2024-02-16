@@ -1,22 +1,21 @@
-<div class="container">
-<div>
-  <form>
-    <div class="justify-content-center">
+  <h2 mat-dialog-title> Report </h2>
 
+  <mat-dialog-content class="mat-typography">
+    <p>
+      If you encountered any issues while parsing your file,
+      please attach your file for further examination and finding a solution to the problem.
+    </p>
+  </mat-dialog-content>
 
-      <div id="controls" class = "row">
-        <div class="file-input-container">
-          <input matTooltip="Press button to upload file"
- type="file" class="file-input" (change)="onFileSelected($event.target)">
-        </div>
+  <mat-dialog-actions align="center">
+    <button style="background-color: #4758b8; margin: auto" class="mat-mdc-button" (click)="fileInput.click()">
+      <span style="padding: 6px; font-size: large; text-align: center; margin: auto; color: whitesmoke" matTooltip="Press to upload file">Select</span>
+      <input #fileInput type="file" (change)="onFileSelected($event)" style="display:none;"/>
+      <mat-icon style="align-content: center; text-align: center; padding-top: 2px; margin: auto; color: whitesmoke">file_upload</mat-icon>
+    </button>
+  </mat-dialog-actions>
 
-      </div>
-
-    </div>
-
-  </form>
-</div>
-
-  <button mat-button (click)="closeDialog()">OK</button>
-  <button mat-button (click)="dialogRef.close()">Cancel</button>
-</div>
+  <mat-dialog-actions align="end">
+    <button mat-button matTooltip="Press to save your report" (click)="closeDialog()">OK</button>
+    <button mat-button matTooltip="Press to close report" (click)="dialogRef.close()">Cancel</button>
+  </mat-dialog-actions>

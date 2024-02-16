@@ -13,7 +13,7 @@
         <span class="form-label" *ngIf="form.word"><strong>Word:</strong></span>
         <span class="form-value" *ngIf="form.word">{{ form.word }}</span>
       </div>
-      <div class="form-row">
+      <div class="form-row" *ngIf="form.number">
         <p>
         <strong> Number: </strong>
         </p>
@@ -23,7 +23,7 @@
           </mat-select>
       </mat-form-field>
       </div>
-      <div class="form-row">
+      <div class="form-row" *ngIf="form.part_of_speech">
         <p>
         <strong> Part of speech: </strong>
         </p>
@@ -33,7 +33,7 @@
           </mat-select>
         </mat-form-field>
       </div>
-      <div class="form-row">
+      <div class="form-row" *ngIf="form.gender">
         <p>
         <strong> Gender: </strong>
         </p>
@@ -43,7 +43,7 @@
           </mat-select>
         </mat-form-field>
       </div>
-      <div class="form-row">
+      <div class="form-row" *ngIf="form.time">
         <p>
         <strong> Time: </strong>
         </p>
@@ -53,7 +53,7 @@
           </mat-select>
         </mat-form-field>
       </div>
-      <div class="form-row">
+      <div class="form-row" *ngIf="form.type">
         <p>
         <strong> Type: </strong>
         </p>
@@ -63,7 +63,7 @@
           </mat-select>
         </mat-form-field>
       </div>
-      <div class="form-row">
+      <div class="form-row" *ngIf="form.inclination">
         <p>
         <strong> Inclination: </strong>
         </p>
@@ -73,7 +73,7 @@
           </mat-select>
         </mat-form-field>
       </div>
-      <div class="form-row">
+      <div class="form-row" *ngIf="form.case">
         <p>
         <strong> Case: </strong>
         </p>
@@ -83,7 +83,7 @@
           </mat-select>
         </mat-form-field>
       </div>
-      <div class="form-row">
+      <div class="form-row" *ngIf="form.animation">
         <p>
         <strong> Animation: </strong>
         </p>

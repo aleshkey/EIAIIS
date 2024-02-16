@@ -32,10 +32,7 @@ export class WordsComponent implements OnInit{
 
 
   openReportDialog(): void {
-    const dialogRef = this.dialog.open(ReportDialogComponent, {
-    width: '300px', // задайте нужную ширину
-    height: '70px', // задайте нужную высоту
-  });
+    const dialogRef = this.dialog.open(ReportDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {

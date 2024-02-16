@@ -1,48 +1,8 @@
-
-#controls{
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  width: 40%;
+.quote__text-letter {
+  float: right; /* Обтекание символа текстом справа */
+  margin-right: 7px; /* Отступ справа */
+  color: #0008ff; /* Цвет символа */
+  font-family: "Roboto Slab", serif; /* Шрифт с засечками */
+  font-size: 20px; /* Размер шрифта */
+  line-height: 20px; /* Высота строки */
 }
-
-
-  .container{
-    height: 600px;
-  }
-
-  .file-input-container {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    border: 2px solid #ccc;
-    padding: 6px 12px;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    color: #333;
-    cursor: pointer;
-    height: 600px;
-  }
-
-  /* Стилизация текста внутри контейнера */
-  .file-input-container span {
-    margin-right: 10px;
-  }
-
-  /* Скрытие стандартного элемента ввода */
-  .file-input-container input[type="file"] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    cursor: pointer;
-  }
-  .file-input {
-    background-color: #f8f8f8;
-    color: #333;
-    border: 2px solid #ccc;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-
